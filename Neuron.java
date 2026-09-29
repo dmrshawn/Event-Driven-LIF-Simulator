@@ -3,6 +3,7 @@ public class Neuron
     private final double membraneBaseVoltage = 1.0;
     private final double inverseMembraneTimeConstant = 200;
     private final double refractoryPeroidLength = 0.002;
+    private final double spikeLength = 0.001;
     private final double threshold;
 
     private boolean inRefractory;
@@ -44,7 +45,7 @@ public class Neuron
         membraneVoltage *= fastExp(- input * inverseMembraneTimeConstant); 
     }
 
-    private static double fastExp(double input) 
+    private double fastExp(double input) 
     {
         // Schraudolph's algorithm
         final long tmp = (long) (15127753267988726L * input + 1072693248366914560L);
@@ -54,7 +55,6 @@ public class Neuron
 
      private void fire()
     {
-        //Create Spike Event
         membraneVoltage = membraneBaseVoltage;
 
         startRefractoryPeriod();
@@ -69,7 +69,7 @@ public class Neuron
 
 
 
-    public boolean recieveSpike(double spikeWeight)
+    public boolean receiveSpike(double spikeWeight)
     {
         if(inRefractory)
             return false;
