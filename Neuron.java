@@ -2,8 +2,7 @@ public class Neuron
 {
     private final double membraneBaseVoltage = 1.0;
     private final double inverseMembraneTimeConstant = 200;
-    private final double refractoryPeroidLength = 0.002;
-    private final double spikeLength = 0.001;
+    private final double refractoryPeroidLength = 2;
     private final double threshold;
 
     private boolean inRefractory;
@@ -21,7 +20,7 @@ public class Neuron
     }
 
 
-    public void tick(double step)
+    public boolean tick(double step)
     {
         if(inRefractory)
         {
@@ -33,9 +32,13 @@ public class Neuron
             decay(step);
 
             if(membraneVoltage >= threshold)
+            {
                 fire();
+                return true;
+            }
         }
-        
+
+        return false;
     }
 
 
@@ -56,7 +59,6 @@ public class Neuron
      private void fire()
     {
         membraneVoltage = membraneBaseVoltage;
-
         startRefractoryPeriod();
     }
 

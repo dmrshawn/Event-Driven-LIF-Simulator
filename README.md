@@ -13,8 +13,13 @@ Since this is primarily a project to familiarize myself with the basics of neuro
 
 
 # Current Progress:
-I finished up a base implementation of the Neuron object that tracks its voltage and refractory period. The neuron can also simulate time steps with the tick() function, membrane potential decay with the decay() function, and sending signals with the fire() function. Currently, the actual sending of signals has not been implemented yet. 
+I finished up a base implementation of the Synapse object, which contains a presynaptic and postsynaptic neuron. 
+Essentially, a synapse is the intersection of tow neurons. When the presynaptic neuron reaches its threshold, it sends a spike to the postsynaptic neuron. However, there is a delay in the signal transitioning between the two neurons, represented by synapticDelay. The synapse also applies its own weight to the magnitude of the electrical spike sent from the presynaptic neuron to the postsynaptic neuron.
+
+I also created the Simulation class to orchestrate the entire network's simulation. Each simulation has a list of neurons and synapses that it contains. It can step through a certain amount of time and simulate all neuron and synapse interactions.
 
 
 # Future Progress:
-I'm working on creating a Synapse object that contains two neurons and a weight. The synapse will transmit electrical impulses from the pre-synaptic neuron to the post-synaptic neuron while adding its own weight into the mix.
+I want to create an easy way to create neuron networks and visualize the sending of spikes, likely using JavaFX components. Graphs or another visual indicator of each neuron's membrane voltage over time are also on the radar.
+Adding some unit tests would also be nice once we have a complete framework of the project.
+I would also like to optimize the Simulator class so that processing a spike doesn't take O(n) time.

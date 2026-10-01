@@ -1,10 +1,15 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Synapse
 {
     private final double weight;
-    private final double synapticDelay = 0.0003;
+    private final double synapticDelay = 3;
 
-    private Neuron preSynapticNeuron;
-    private Neuron postSynapticNeuron;
+    private final Neuron preSynapticNeuron;
+    private final Neuron postSynapticNeuron;
+
+    private final Queue<Double> pendingSpikes = new LinkedList<>();
 
     public Synapse(Neuron inputPreNeuron, Neuron inputPostNeuron, double inputWeight)
     {
@@ -13,9 +18,28 @@ public class Synapse
         weight = inputWeight;
     }
 
-    public void transmit() 
+    public void onSpike(double time)
     {
-        postSynapticNeuron.receiveSpike(weight);
+        pendingSpikes.add(time + synapticDelay);
     }
 
+    public void update(double currentTime)
+    {
+        while (!pendingSpikes.isEmpty() && pendingSpikes.peek() <= currentTime)
+        {
+            pendingSpikes.poll();
+            postSynapticNeuron.receiveSpike(weight);
+        }
+    }
+
+
+    public Neuron getPresynapticNeuron()
+    {
+        return preSynapticNeuron;
+    }
+
+    public Neuron getPostsynapticNeuron()
+    {
+        return postSynapticNeuron;
+    }
 }
