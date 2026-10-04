@@ -1,3 +1,5 @@
+package com.example;
+
 public class Neuron
 {
     private final double membraneBaseVoltage = 1.0;
