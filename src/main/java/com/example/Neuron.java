@@ -2,7 +2,7 @@ package com.example;
 
 public class Neuron
 {
-    private final double membraneBaseVoltage = 1.0;
+    private final double membraneBaseVoltage;
     private final double inverseMembraneTimeConstant = 200;
     private final double refractoryPeroidLength = 2;
     private final double threshold;
@@ -12,10 +12,17 @@ public class Neuron
 
     private double membraneVoltage;
 
+    public Neuron()
+    {
+        membraneVoltage = -70;
+        membraneBaseVoltage = -70;
+        threshold = -55;
+    }
 
     public Neuron(double inputMV, double inputThreshold)
     {
         membraneVoltage = inputMV;
+        membraneBaseVoltage = inputMV;
         threshold = inputThreshold;
 
         inRefractory = false;

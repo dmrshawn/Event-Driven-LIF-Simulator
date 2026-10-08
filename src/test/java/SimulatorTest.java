@@ -1,8 +1,7 @@
-import java.util.Locale;
-
 import com.example.Neuron;
 import com.example.Simulator;
 import com.example.Synapse;
+import java.util.Locale;
 
 public class SimulatorTest 
 {
@@ -50,7 +49,7 @@ public class SimulatorTest
         System.out.println("\n========================================");
         System.out.printf("RESULT: %d tests passed, %d tests failed%n", passed, failed);
         System.out.println("========================================");
-
+        System.out.flush();
         if (failed > 0)
             System.exit(1);
     }

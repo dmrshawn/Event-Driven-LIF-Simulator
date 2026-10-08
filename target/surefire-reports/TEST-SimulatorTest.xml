@@ -4,7 +4,7 @@
     <property name="java.specification.version" value="26"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\Users\dmrsh\Github Projects\Event-Driven-LIF-Simulator\target\test-classes;C:\Users\dmrsh\Github Projects\Event-Driven-LIF-Simulator\target\classes;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-controls\17.0.10\javafx-controls-17.0.10.jar;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-controls\17.0.10\javafx-controls-17.0.10-win.jar;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-graphics\17.0.10\javafx-graphics-17.0.10.jar;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-graphics\17.0.10\javafx-graphics-17.0.10-win.jar;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-base\17.0.10\javafx-base-17.0.10.jar;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-base\17.0.10\javafx-base-17.0.10-win.jar;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-fxml\17.0.10\javafx-fxml-17.0.10.jar;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-fxml\17.0.10\javafx-fxml-17.0.10-win.jar;"/>
+    <property name="java.class.path" value="C:\Users\dmrsh\Github Projects\Event-Driven-LIF-Simulator\target\test-classes;C:\Users\dmrsh\Github Projects\Event-Driven-LIF-Simulator\target\classes;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-controls\21\javafx-controls-21.jar;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-controls\21\javafx-controls-21-win.jar;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-graphics\21\javafx-graphics-21.jar;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-graphics\21\javafx-graphics-21-win.jar;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-base\21\javafx-base-21.jar;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-base\21\javafx-base-21-win.jar;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-fxml\21\javafx-fxml-21.jar;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-fxml\21\javafx-fxml-21-win.jar;"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -15,9 +15,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-26.0.1\bin"/>
-    <property name="sun.java.command" value="C:\Users\dmrsh\AppData\Local\Temp\surefire7834769878200437761\surefirebooter-20261004132606503_3.jar C:\Users\dmrsh\AppData\Local\Temp\surefire7834769878200437761 2026-10-04T13-26-05_128-jvmRun1 surefire-20261004132606503_1tmp surefire_0-20261004132606503_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\dmrsh\AppData\Local\Temp\surefire8346610782223316464\surefirebooter-20261007202600431_3.jar C:\Users\dmrsh\AppData\Local\Temp\surefire8346610782223316464 2026-10-07T20-26-00_249-jvmRun1 surefire-20261007202600431_1tmp surefire_0-20261007202600431_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\Users\dmrsh\Github Projects\Event-Driven-LIF-Simulator\target\test-classes;C:\Users\dmrsh\Github Projects\Event-Driven-LIF-Simulator\target\classes;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-controls\17.0.10\javafx-controls-17.0.10.jar;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-controls\17.0.10\javafx-controls-17.0.10-win.jar;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-graphics\17.0.10\javafx-graphics-17.0.10.jar;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-graphics\17.0.10\javafx-graphics-17.0.10-win.jar;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-base\17.0.10\javafx-base-17.0.10.jar;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-base\17.0.10\javafx-base-17.0.10-win.jar;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-fxml\17.0.10\javafx-fxml-17.0.10.jar;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-fxml\17.0.10\javafx-fxml-17.0.10-win.jar;"/>
+    <property name="surefire.test.class.path" value="C:\Users\dmrsh\Github Projects\Event-Driven-LIF-Simulator\target\test-classes;C:\Users\dmrsh\Github Projects\Event-Driven-LIF-Simulator\target\classes;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-controls\21\javafx-controls-21.jar;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-controls\21\javafx-controls-21-win.jar;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-graphics\21\javafx-graphics-21.jar;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-graphics\21\javafx-graphics-21-win.jar;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-base\21\javafx-base-21.jar;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-base\21\javafx-base-21-win.jar;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-fxml\21\javafx-fxml-21.jar;C:\Users\dmrsh\.m2\repository\org\openjfx\javafx-fxml\21\javafx-fxml-21-win.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\dmrsh"/>
     <property name="user.language" value="en"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\dmrsh\AppData\Local\Temp\surefire7834769878200437761\surefirebooter-20261004132606503_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\dmrsh\AppData\Local\Temp\surefire8346610782223316464\surefirebooter-20261007202600431_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="26.0.1+8-34"/>

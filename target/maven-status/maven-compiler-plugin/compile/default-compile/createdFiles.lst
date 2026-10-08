@@ -1,4 +1,7 @@
 com\example\Synapse.class
 com\example\Neuron.class
 com\example\Main.class
+com\example\RosterGraph.class
 com\example\Simulator.class
+com\example\RosterGraph$Point.class
+com\example\Launcher.class
