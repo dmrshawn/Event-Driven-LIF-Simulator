@@ -11,14 +11,14 @@ public class Simulator
     private double currentTime;
     private final double timeStep;
 
-    private final RosterGraph<Neuron> rosterGraph;
+    private final RasterGraph<Neuron> rasterGraph;
 
 
     public Simulator(double inputTimeStep)
     {
         neurons = new ArrayList<>();
         synapses = new ArrayList<>();
-        rosterGraph = new RosterGraph<>();
+        rasterGraph = new RasterGraph<>();
         currentTime = 0.0;
         timeStep = inputTimeStep;
     }
@@ -26,7 +26,7 @@ public class Simulator
     public void addNeuron(Neuron neuron)
     {
         neurons.add(neuron);
-        rosterGraph.addObject(neuron);
+        rasterGraph.addObject(neuron);
     }
 
     public void addSynapse(Synapse synapse)
@@ -47,7 +47,7 @@ public class Simulator
             if (neuron.tick(timeStep))
             {
                 triggerSynapsesForNeuron(neuron);
-                rosterGraph.addPoint(neuron, i, currentTime);
+                rasterGraph.addPoint(neuron, i, currentTime);
             }
         }   
 
@@ -73,8 +73,8 @@ public class Simulator
         return currentTime;
     }
 
-    public RosterGraph<Neuron> getRosterGraph()
+    public RasterGraph<Neuron> getRasterGraph()
     {
-        return rosterGraph;
+        return rasterGraph;
     }
 }

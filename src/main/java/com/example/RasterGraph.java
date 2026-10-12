@@ -5,12 +5,8 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.ScatterChart;
 import javafx.scene.chart.XYChart;
 
-public class RosterGraph<T>
+public class RasterGraph<T>
 {
-
-    ScatterChart<Number, Number> createGraph() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
     record Point(int neuronIndex, double time) {}
     
     private final Map<T, List<Point>> graphs = new LinkedHashMap<>();
@@ -18,7 +14,7 @@ public class RosterGraph<T>
 
     public ScatterChart<Number, Number> createGraph(T object)
     {
-        ScatterChart<Number, Number> chart = makeNewScatterChart("Neuron Index", "Time", "Roster Graph");
+        ScatterChart<Number, Number> chart = makeNewScatterChart("Neuron Index", "Time", "Raster Graph");
 
         List<Point> points = graphs.get(object);
 
@@ -32,7 +28,7 @@ public class RosterGraph<T>
 
     public ScatterChart<Number, Number> createCombinedGraph() 
     { 
-        ScatterChart<Number, Number> chart = makeNewScatterChart("Neuron Index", "Time", "Roster Graphs");
+        ScatterChart<Number, Number> chart = makeNewScatterChart("Neuron Index", "Time", "Raster Graphs");
         
         for (Map.Entry<T, List<Point>> entry : graphs.entrySet()) 
             chart.getData().add(createSeries(String.valueOf(entry.getKey()), entry.getValue()));

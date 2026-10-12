@@ -2,8 +2,8 @@ package com.example;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.stage.Stage;
 import javafx.scene.chart.ScatterChart;
+import javafx.stage.Stage;
 
 public class Main extends Application 
 {
@@ -27,11 +27,11 @@ public class Main extends Application
 
         simulator.runSteps(1000);
 
-        ScatterChart<Number, Number> chart = simulator.getRosterGraph().createGraph();
+        ScatterChart<Number, Number> chart = simulator.getRasterGraph().createCombinedGraph();
 
         Scene scene = new Scene(chart, 800, 600);
 
-        stage.setTitle("Neuron Spike Roster");
+        stage.setTitle("Neuron Spike Raster Graph");
         stage.setScene(scene);
         stage.show();
     }
