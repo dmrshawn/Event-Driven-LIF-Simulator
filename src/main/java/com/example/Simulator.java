@@ -23,6 +23,15 @@ public class Simulator
         timeStep = inputTimeStep;
     }
 
+    public Simulator(double inputTimeStep, ArrayList<Neuron> inputNeurons, ArrayList<Synapse> inputSynapses)
+    {
+        neurons = inputNeurons;
+        synapses = inputSynapses;
+        rasterGraph = new RasterGraph<>();
+        currentTime = 0.0;
+        timeStep = inputTimeStep;
+    }
+
     public void addNeuron(Neuron neuron)
     {
         neurons.add(neuron);

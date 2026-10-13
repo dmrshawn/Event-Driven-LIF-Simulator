@@ -3,7 +3,7 @@ package com.example;
 public class Neuron
 {
     private final double membraneBaseVoltage;
-    private final double inverseMembraneTimeConstant = 200;
+    private final double inverseMembraneTimeConstant = 20;
     private final double refractoryPeroidLength = 2;
     private final double threshold;
 
@@ -12,20 +12,36 @@ public class Neuron
 
     private double membraneVoltage;
 
-    public Neuron()
+    private final String name;
+
+    public Neuron(String inputName)
     {
         membraneVoltage = -70;
         membraneBaseVoltage = -70;
         threshold = -55;
+        inRefractory = false;
+
+        name = inputName;
     }
 
-    public Neuron(double inputMV, double inputThreshold)
+    public Neuron()
+    {
+        this("New Neuron");
+    }
+
+    public Neuron(double inputMV, double inputThreshold, String inputName)
     {
         membraneVoltage = inputMV;
         membraneBaseVoltage = inputMV;
         threshold = inputThreshold;
-
         inRefractory = false;
+
+        name = inputName;
+    }
+
+    public Neuron(double inputMV, double inputThreshold)
+    {
+        this(inputMV, inputThreshold, "Neuron");
     }
 
 
@@ -54,7 +70,7 @@ public class Neuron
     private void decay(double input)
     {
         //V = Vo * e^(-t/tau) --> V = Vo * e^(-t * 1/tau) --> V *= e^(-t * 1/tau)
-        membraneVoltage *= fastExp(- input * inverseMembraneTimeConstant); 
+        membraneVoltage += (membraneVoltage - membraneBaseVoltage) * fastExp(- input * inverseMembraneTimeConstant); 
     }
 
     private double fastExp(double input) 
@@ -110,5 +126,11 @@ public class Neuron
 
         refractoryPeriodLeft = 0;
         inRefractory = false;
+    }
+
+    @Override
+    public String toString()
+    {
+        return name;
     }
 }
