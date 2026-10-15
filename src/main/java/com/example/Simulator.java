@@ -1,6 +1,5 @@
 package com.example;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Simulator
@@ -14,16 +13,16 @@ public class Simulator
     private final RasterGraph<Neuron> rasterGraph;
 
 
-    public Simulator(double inputTimeStep)
-    {
-        neurons = new ArrayList<>();
-        synapses = new ArrayList<>();
-        rasterGraph = new RasterGraph<>();
-        currentTime = 0.0;
-        timeStep = inputTimeStep;
-    }
+    // public Simulator(double inputTimeStep)
+    // {
+    //     neurons = new List<Neuron>();
+    //     synapses = new List<Synapse>();
+    //     rasterGraph = new RasterGraph<>();
+    //     currentTime = 0.0;
+    //     timeStep = inputTimeStep;
+    // }
 
-    public Simulator(double inputTimeStep, ArrayList<Neuron> inputNeurons, ArrayList<Synapse> inputSynapses)
+    public Simulator(double inputTimeStep, List<Neuron> inputNeurons, List<Synapse> inputSynapses)
     {
         neurons = inputNeurons;
         synapses = inputSynapses;
@@ -85,5 +84,10 @@ public class Simulator
     public RasterGraph<Neuron> getRasterGraph()
     {
         return rasterGraph;
+    }
+
+    public List<Neuron> getNeurons()
+    {
+        return neurons;
     }
 }

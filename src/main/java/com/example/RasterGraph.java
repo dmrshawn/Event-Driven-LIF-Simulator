@@ -43,10 +43,10 @@ public class RasterGraph<T>
         xAxis.setLabel(xAxisName); 
         yAxis.setLabel(yAxisName); 
         
-        ScatterChart<Number, Number> outputChart = new ScatterChart<>(xAxis, yAxis); 
+        ScatterChart<Number, Number> chart = new ScatterChart<>(xAxis, yAxis); 
 
-        outputChart.setTitle(title);
-        return outputChart;
+        chart.setTitle(title);
+        return chart;
     }
 
     private XYChart.Series<Number, Number> createSeries(String name, List<Point> points)
@@ -69,9 +69,9 @@ public class RasterGraph<T>
         graphs.putIfAbsent(object, new ArrayList<>());
     }
 
-    public void addPoint(T object, int index, double time)
+    public void addPoint(T object, int neuronIndex, double time)
     {
-        graphs.computeIfAbsent(object, k -> new ArrayList<>()).add(new Point(index, time));
+        graphs.computeIfAbsent(object, k -> new ArrayList<>()).add(new Point(neuronIndex, time));
     }
 
     public List<Point> getPoints(T object)

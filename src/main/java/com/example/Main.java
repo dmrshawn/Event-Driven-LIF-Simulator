@@ -15,33 +15,45 @@ public class Main extends Application
         launch(args);
     }
 
+    private Simulator createSimulator()
+    {
+        List<Neuron> neurons = List.of(
+                new Neuron("Input Neuron"),
+                new Neuron("Excitatory #1"),
+                new Neuron("Excitatory #2"),
+                new Neuron("Downstream Neuron")
+        );
+
+        List<Synapse> synapses = List.of(
+                new Synapse(neurons.get(0), neurons.get(1), 20.0),
+                new Synapse(neurons.get(0), neurons.get(2), 20.0),
+                new Synapse(neurons.get(1), neurons.get(3), 25.0),
+                new Synapse(neurons.get(2), neurons.get(3), -5.0)
+        );
+
+        return new Simulator(0.1, neurons, synapses);
+    }
+
+    private void runSimulator(Simulator simulator, int stepCount, int spikeInterval, int spikeOffset, double spikeMag)
+    {
+        spikeOffset = spikeOffset % spikeInterval;
+        List<Neuron> neurons = simulator.getNeurons();
+
+        for(int i = 0; i < stepCount; i++)
+        {
+            if(i % spikeInterval == spikeOffset)
+                neurons.get(0).receiveSpike(spikeMag);
+            
+            simulator.step();
+        }
+    }
+
     @Override
     public void start(Stage stage)
     {
-        ArrayList<Neuron> neurons = new ArrayList<>();
+        Simulator simulator = createSimulator();
 
-        neurons.add(new Neuron("Input Neuron")); // N0: input
-        neurons.add(new Neuron("Excitatory #1")); // N1: excitatory
-        neurons.add(new Neuron("Excitatory #2")); // N2: excitatory
-        neurons.add(new Neuron("Downstream Neuron")); // N3: downstream
-
-        ArrayList<Synapse> synapses = new ArrayList<>();
-
-        synapses.add(new Synapse(neurons.get(0), neurons.get(1), 20.0));
-        synapses.add(new Synapse(neurons.get(0), neurons.get(2), 20.0));
-        synapses.add(new Synapse(neurons.get(1), neurons.get(3), 25.0));
-        synapses.add(new Synapse(neurons.get(2), neurons.get(3), -5.0));
-
-
-        Simulator simulator = new Simulator(0.1, neurons, synapses);
-
-        for (int i = 0; i < 500; i++)
-        {
-            if(i%25 == 5)
-                neurons.get(0).receiveSpike(20.0);
-
-            simulator.step();
-        }
+        runSimulator(simulator, 500, 25, 5, 20.0);
 
         ScatterChart<Number, Number> chart = simulator.getRasterGraph().createCombinedGraph();
 
